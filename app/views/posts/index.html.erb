@@ -1,2 +1,12 @@
 <h1>Top page</h1>
-<%= @post %>
+<%= link_to '新規投稿だお。', '/posts/new' %>
+<% @posts.each do |post| %>
+  <div class = "post">
+    <div class = "post-date">
+      投稿日時:<%= post.content %>
+    </div>
+    <div class = "post-content">
+      <%= post.created_at %>
+    </div>
+  </div>
+<% end %>
